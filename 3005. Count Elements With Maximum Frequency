@@ -1,0 +1,15 @@
+class Solution(object):
+    def maxFrequencyElements(self, nums):
+        count = {}
+        
+        for num in nums:
+            count[num] = count.get(num,0) + 1
+
+        maximum = max(count.values())
+
+        total = 0
+        for value in count.values():
+            if value == maximum:
+                total += value
+
+        return total
